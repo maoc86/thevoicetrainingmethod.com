@@ -1,14 +1,94 @@
-.stage {
+:root {
+  --bg: #000;
+  --fucsia: #f72885;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+}
+
+.page {
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage {
+  flex: 1;
   display: grid;
   place-items: center;
-  background: #0d0d0f;
+  padding: 24px;
 }
 
 .logo {
   width: min(320px, 60vw);
   height: auto;
   animation: fade-in 0.9s ease-out;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(16px, 4vw, 40px);
+  padding: clamp(14px, 3vw, 22px) 20px;
+  background: var(--fucsia);
+  color: #000;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 520px) {
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-divider {
+    display: none;
+  }
 }
 
 @keyframes fade-in {

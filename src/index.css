@@ -1,5 +1,6 @@
 :root {
-  --bg: #0d0d0f;
+  --bg: #000;
+  --fucsia: #f72885;
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   color-scheme: dark;
   font-synthesis: none;
@@ -13,12 +14,12 @@
 }
 
 html,
-body,
-#root {
+body {
   height: 100%;
   margin: 0;
+  background: var(--bg);
 }
 
-body {
-  background: var(--bg);
+#root {
+  height: 100%;
 }
